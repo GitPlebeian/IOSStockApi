@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="bab-Bg-0UB">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Stock Data View Controller-->
+        <scene sceneID="sk7-A0-RcJ">
+            <objects>
+                <viewController id="bab-Bg-0UB" customClass="StockDataViewController" customModule="stocksApi" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="oO8-a5-QQi">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="B1O-Cj-FzI">
+                                <rect key="frame" x="0.0" y="44" width="414" height="56"/>
+                                <subviews>
+                                    <searchBar contentMode="redraw" placeholder="Ticker Symbol" translatesAutoresizingMaskIntoConstraints="NO" id="zdJ-lP-GkH">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </searchBar>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="11" translatesAutoresizingMaskIntoConstraints="NO" id="ME8-N6-sJb">
+                                <rect key="frame" x="10.5" y="110" width="393" height="121"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="From Date" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="23F-fL-vfW">
+                                        <rect key="frame" x="0.0" y="0.0" width="393" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="To Date" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vmk-hN-s6h">
+                                        <rect key="frame" x="0.0" y="41" width="393" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Pt-0n-A45">
+                                        <rect key="frame" x="0.0" y="82" width="393" height="39"/>
+                                        <color key="backgroundColor" red="0.10038231935260029" green="0.67502776015228427" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                        <state key="normal" title="Get Data">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="getDataButtonTapped:" destination="bab-Bg-0UB" eventType="touchUpInside" id="Op0-id-Rx9"/>
+                                        </connections>
+                                    </button>
+                                    <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="11" translatesAutoresizingMaskIntoConstraints="NO" id="Ern-dD-geA">
+                                        <rect key="frame" x="0.0" y="121" width="393" height="44"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(Symbol)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7y1-sX-j3y">
+                                                <rect key="frame" x="0.0" y="0.0" width="393" height="0.0"/>
+                                                <fontDescription key="fontDescription" type="system" weight="black" pointSize="49"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(Last" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pDC-GY-LPu">
+                                                <rect key="frame" x="0.0" y="11" width="393" height="0.0"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(Average Price)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fmn-ec-7Kh">
+                                                <rect key="frame" x="0.0" y="22" width="393" height="0.0"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(High)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wog-Kg-Pyx">
+                                                <rect key="frame" x="0.0" y="33" width="393" height="0.0"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(Low)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vJT-sj-omE">
+                                                <rect key="frame" x="0.0" y="44" width="393" height="0.0"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="ME8-N6-sJb" firstAttribute="width" secondItem="oO8-a5-QQi" secondAttribute="width" multiplier="0.95" id="FN6-hm-naE"/>
+                            <constraint firstItem="B1O-Cj-FzI" firstAttribute="top" secondItem="jvv-cG-E6n" secondAttribute="top" id="Qqr-Rx-krA"/>
+                            <constraint firstItem="B1O-Cj-FzI" firstAttribute="leading" secondItem="jvv-cG-E6n" secondAttribute="leading" id="ct3-52-pjO"/>
+                            <constraint firstItem="ME8-N6-sJb" firstAttribute="top" secondItem="B1O-Cj-FzI" secondAttribute="bottom" constant="10" id="cv3-tQ-Vfv"/>
+                            <constraint firstItem="B1O-Cj-FzI" firstAttribute="trailing" secondItem="jvv-cG-E6n" secondAttribute="trailing" id="vi4-i1-mOj"/>
+                            <constraint firstItem="ME8-N6-sJb" firstAttribute="centerX" secondItem="jvv-cG-E6n" secondAttribute="centerX" id="yN1-oD-ITw"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="jvv-cG-E6n"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="Gbq-Vc-lQH" appends="YES" id="mcC-tP-2yb"/>
+                        </connections>
+                    </view>
+                    <connections>
+                        <outlet property="fromDateDatePicker" destination="e8p-vi-XrC" id="Omv-8P-cLd"/>
+                        <outlet property="fromDateTextField" destination="23F-fL-vfW" id="nSc-H7-ja0"/>
+                        <outlet property="outputStackView" destination="Ern-dD-geA" id="lIz-3Q-PaL"/>
+                        <outlet property="stockAveragePriceLabel" destination="fmn-ec-7Kh" id="g5E-NI-AmB"/>
+                        <outlet property="stockHighLabel" destination="Wog-Kg-Pyx" id="mzv-Fh-j2x"/>
+                        <outlet property="stockLastLabel" destination="pDC-GY-LPu" id="AbT-Da-0kh"/>
+                        <outlet property="stockLowLabel" destination="vJT-sj-omE" id="dba-87-dkZ"/>
+                        <outlet property="stockSymbol" destination="7y1-sX-j3y" id="cv7-sb-G99"/>
+                        <outlet property="tickerSearchSearchBar" destination="zdJ-lP-GkH" id="SJ7-ef-TEb"/>
+                        <outlet property="toDateDatePicker" destination="kXj-8U-7Sb" id="SxW-Dx-JRq"/>
+                        <outlet property="toDateTextField" destination="vmk-hN-s6h" id="bZM-2v-5Eh"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VUg-rt-bdG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" id="kXj-8U-7Sb">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="216"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                    <date key="date" timeIntervalSinceReferenceDate="587580100.35727">
+                        <!--2019-08-15 16:41:40 +0000-->
+                    </date>
+                    <connections>
+                        <action selector="toDatePickerValueChanged:" destination="bab-Bg-0UB" eventType="valueChanged" id="z6K-q4-LwN"/>
+                    </connections>
+                </datePicker>
+                <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" id="e8p-vi-XrC">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="216"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                    <date key="date" timeIntervalSinceReferenceDate="587580100.35727">
+                        <!--2019-08-15 16:41:40 +0000-->
+                    </date>
+                    <connections>
+                        <action selector="fromDatePickerValueChanged:" destination="bab-Bg-0UB" eventType="valueChanged" id="039-5s-A3r"/>
+                    </connections>
+                </datePicker>
+                <tapGestureRecognizer id="Gbq-Vc-lQH">
+                    <connections>
+                        <action selector="mainViewTapped:" destination="bab-Bg-0UB" id="Aaj-We-Pho"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="102.89855072463769" y="39.508928571428569"/>
+        </scene>
+    </scenes>
+</document>
